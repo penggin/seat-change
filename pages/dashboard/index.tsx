@@ -1,4 +1,12 @@
-import { Box, Button, Center, Container, Flex, Grid } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Container,
+  Flex,
+  Grid,
+  useToast,
+} from "@chakra-ui/react";
 import Table from "@components/StudentTable";
 import Card from "@components/StudentCard";
 import { Dispatch, SetStateAction, useState } from "react";
@@ -62,7 +70,9 @@ function mixStudents(
   );
   console.log(studentsState);
 }
+
 const Dashboard = () => {
+  const toast = useToast();
   const [studentsState, setStudents] = useState([...students]);
   return (
     <Box mt="60px" alignItems={"center"} textAlign="center" mr="40px" ml="40px">
@@ -97,7 +107,7 @@ const Dashboard = () => {
           />
         </Center>
       </Box>
-      <Container mt="90px" maxW="400px">
+      <Container mt="90px" mb="90px" maxW="400px">
         <Button
           colorScheme="blue"
           size="lg"
@@ -114,7 +124,20 @@ const Dashboard = () => {
         >
           초기화
         </Button>
-        <Button colorScheme="blue" size="lg">
+        <Button
+          colorScheme="blue"
+          size="lg"
+          onClick={() =>
+            toast({
+              title: "지금은 사용할 수 없는 기능입니다.",
+              description:
+                "휴대폰으로 찍으세요 ^오^ 3시간작이라 시간이 없음 ㅎㅎ",
+              status: "warning",
+              duration: 5000,
+              isClosable: true,
+            })
+          }
+        >
           저장
         </Button>
       </Container>

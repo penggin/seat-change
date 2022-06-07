@@ -75,7 +75,7 @@ const Dashboard = () => {
   const toast = useToast();
   const [studentsState, setStudents] = useState([...students]);
   return (
-    <Box mt="60px" alignItems={"center"} textAlign="center" mr="40px" ml="40px">
+    <Box mt="150px" alignItems={"center"} textAlign="center" mr="20%" ml="20%">
       <Box borderWidth="1px" borderRadius="lg" alignItems={"center"}>
         <Container>
           <Center>

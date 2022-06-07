@@ -46,6 +46,7 @@ const SocialButton = ({
 export default function LargeWithNewsletter() {
   return (
     <Box
+      mt="250px"
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
